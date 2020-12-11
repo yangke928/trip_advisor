@@ -1,0 +1,24 @@
+.adj-img {
+    width: 700px;
+    height: 800px
+}
+
+.font-adj {
+    margin-left: 70px;
+    margin-top: 259px;
+    font-size: xxx-large;
+}
+
+.search-adj {
+    margin-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0.5rem;
+    border-color: lightgray;
+    width: 100px;
+    height: 40px;
+
+}
+.search-bg {
+    background-color: lightgrey;
+}

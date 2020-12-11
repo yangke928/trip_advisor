@@ -1,0 +1,26 @@
+.search-bttn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: black;
+    width: inherit;
+}
+
+.input-adj {
+    margin-left: 10px;
+}
+
+h6 {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+select {
+    margin-left: 10px;
+}
+
+.list-adj {
+    width: auto;
+    color: black;
+}
