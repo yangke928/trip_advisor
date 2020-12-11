@@ -513,10 +513,16 @@
 }
 
 .login-msg-adj {
-    font-size: x-large;
     margin-top: 20px;
 }
 
 .btn-pos-adj {
+    margin-top: 10px;
+}
+
+
+.photo-adj {
+    height: 60px;
+    width: 60px;
     margin-top: 10px;
 }

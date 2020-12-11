@@ -1,12 +1,12 @@
 import React from "react"
-import SearchPageHeader from "../components/search/SearchPageHeader";
-import "./search-container.style.client.css"
-import restaurantService from "../services/restaurantService"
-import {convertPosition} from "../services/mapService";
+import SearchPageHeader from "./SearchPageHeader";
+import "./search-component.style.client.css"
+import restaurantService from "../../services/restaurantService"
+import {convertPosition} from "../../services/mapService";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import Map from "../components/Map/Map";
-class SearchContainer extends React.Component {
+import Map from "../Map/Map";
+class SearchComponent extends React.Component {
 
     componentDidMount() {
         //from url
@@ -121,6 +121,21 @@ class SearchContainer extends React.Component {
                 </div>
                 <div className="col-5">
                     {
+                        this.props.restaurants === "" &&
+                        <div className="container center-pill msg-adj">
+                            <h4>
+                                <a className="badge badge-info">
+                                    Yelp’s COVID-19 Response and Support for Local Businesses
+                                </a></h4>
+                            <div className="form-group">
+                                <h5>Relief for Affected Businesses</h5>
+                                <h5>Helping Local Communities Stay Connected</h5>
+                                <h5>Ensuring Trusted Content for Business Owners and Consumers</h5>
+                                <h5>Focusing on Our Yelp Employees Around the World</h5>
+                            </div>
+                        </div>
+                    }
+                    {
                         this.props.restaurants !== "" &&
                         <h3>Best Restaurant Around {this.state.zipcode}</h3>
                     }
@@ -152,8 +167,9 @@ class SearchContainer extends React.Component {
                     }
 
                 </div>
+
             </div>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
     }
 }
@@ -193,4 +209,4 @@ const propertyToDispatchMapper = (dispatch) => ({
 })
 
 
-export default connect (stateToProperty, propertyToDispatchMapper)(SearchContainer)
+export default connect (stateToProperty, propertyToDispatchMapper)(SearchComponent)

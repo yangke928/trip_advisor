@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from "react-redux";
+import './navbar.css';
 class Navbar extends Component {
+
 
     state = {
         user: {}
@@ -9,49 +11,29 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-2">
-                <div className="container">
-                    <Link className="navbar-brand float-left" to="/">
-                        YelpReview
-                    </Link>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">
-                                    Home
-                                </Link>
-                            </li>
-                            {
-                                this.props.isSignIn === "" &&
-                                <span>
-                                        <li className="nav-item">
-                                            <Link className="nav-link" to="/login">
-                                                SignIn
-                                            </Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link className="nav-link" to="/register">SignUp</Link>
-                                        </li>
-                                    </span>
-                            }
-                            {
-                                this.props.isSignIn !== "" &&
-                                <div>
-                                    <li className="nav-item">
-                                        <Link className="nav-link"
-                                              to={`/profile`}>
-                                            {this.props.isSignIn}</Link>
-                                    </li>
-                                    <Link to={`/`}>
-                                        <li onClick={e => this.props.updateLogOutStatus("")}>
-                                            Log Out
-                                        </li>
-                                    </Link>
-                                </div>
-                            }
-                        </ul>
-                    </div>
-                </div>
+            <nav className="navbar navbar-dark bg-dark justify-content-between">
+                <span className="navbar-brand color-adj">YelpReview</span>
+                <span className="form-inline">
+                    <Link className="navbar-brand" to="/">Home</Link>
+                    {this.props.isSignIn === "" &&
+                    <Link className="navbar-brand" to="/login">SignIn</Link>
+                    }
+                    <br/>
+                    {this.props.isSignIn === "" &&
+                    <Link className="navbar-brand" to="/register">SignUp</Link>
+                    }
+                    {
+                        this.props.isSignIn !== "" &&
+                        <label><Link className="navbar-brand" to={`/profile`}> {this.props.isSignIn}</Link></label>
+                    }
+                    {
+                        this.props.isSignIn !== "" &&
+                        <label><Link className="navbar-brand" to={`/`} onClick={e => this.props.updateLogOutStatus("")}>Log Out</Link></label>
+                    }
+                </span>
+
+
+
             </nav>
         );
     }

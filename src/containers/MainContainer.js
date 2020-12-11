@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import HomePageComponent from "../components/HomePage/HomePageComponent";
 import Login from "../components/Login/Login";
 import Signup from "../components/signup/Signup";
-import SearchContainer from "./SearchContainer";
+import SearchContainer from "../components/search/SearchComponent";
 import LoggedInUserProfile from "../components/Profile/LoggedInUserProfile";
 import OtherUserProfile from "../components/Profile/OtherUserProfile";
 import RestaurantComponent from "../components/Restaurants/restaurantComponent";

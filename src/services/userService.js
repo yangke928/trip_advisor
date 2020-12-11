@@ -16,7 +16,6 @@ const createUser = (user) =>
         }
     }).then(response => response.json())
 
-
 const updateUser = (userId, newUser) =>
     fetch(`${USER_URL}/${userId}`, {
         method: "PUT",

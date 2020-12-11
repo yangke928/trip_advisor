@@ -1,9 +1,13 @@
 import React from "react"
-import "./search.style.client.css"
-import image from "./header.jpg"
+import "./searchPageHeader.style.client.css"
+
 const SearchPageHeader = () =>
     <div>
-        <img src={image} className="header" alt="header"/>
+        <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+
+            </a>
+        </nav>
     </div>
 
 export default  SearchPageHeader

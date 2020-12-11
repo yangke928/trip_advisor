@@ -1,4 +1,4 @@
-import {API_KEY, DEFAULT_URL} from "./config";
+import {API_KEY, DEFAULT_URL, RESTAURANT_URL} from "./config";
 
 const findAllRestaurantByKeyword = (lat, lng, keyword) =>
     fetch(`${DEFAULT_URL}?term=restaurants+${keyword}&latitude=${lat}&longitude=${lng}`, {
@@ -6,7 +6,7 @@ const findAllRestaurantByKeyword = (lat, lng, keyword) =>
             Authorization: `Bearer ${API_KEY}`,
             Origin: 'localhost',
             withCredentials: true,
-            mode: 'cors'
+            mode: 'no-cors'
         }
     }).then(response => response.json())
 
@@ -51,7 +51,7 @@ const findRestaurantBySortAndFilter = (lat, lng, sort, filter) =>
     }).then(response => response.json())
 
 const findRestaurantById = ( resId ) =>
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${resId}`, {
+    fetch(`${RESTAURANT_URL}/${resId}`, {
         headers: {
             Authorization: `Bearer ${API_KEY}`,
             Origin: 'localhost',
@@ -62,7 +62,7 @@ const findRestaurantById = ( resId ) =>
 
 
 const findReviewsById = (resId) =>
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${resId}/reviews`, {
+    fetch(`${RESTAURANT_URL}/${resId}/reviews`, {
         headers: {
             Authorization: `Bearer ${API_KEY}`,
             Origin: 'localhost',
