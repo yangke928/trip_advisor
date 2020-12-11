@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import Navbar from "../components/Navbar/Navbar";
 import HomePageComponent from "../components/HomePage/HomePageComponent";
 import Login from "../components/Login/Login";
@@ -10,8 +10,7 @@ import OtherUserProfile from "../components/Profile/OtherUserProfile";
 import RestaurantComponent from "../components/Restaurants/restaurantComponent";
 import Foot from "../components/Foot/Foot";
 
-class NavbarContainer extends Component {
-
+class MainContainer extends Component {
 
     render() {
         return (
@@ -39,4 +38,4 @@ class NavbarContainer extends Component {
 
 
 
-export default NavbarContainer;
+export default MainContainer;

@@ -1,5 +1,4 @@
-const USER_URL = "https://web-project-server.herokuapp.com/api/users"
-// const USER_URL = "http://localhost:8080/api/users"
+import {USER_URL} from "./config"
 
 const findOneUser = (username) =>
     fetch(USER_URL).then(response => response.json())

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import userService from "../../services/userService";
 
 class OtherUserProfile extends React.Component {

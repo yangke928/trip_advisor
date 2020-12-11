@@ -1,13 +1,13 @@
 import React from "react"
 import {GOOGLE_MAP_KEY} from "./config"
 import {GoogleMap, InfoWindow, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
-import mapService from "../../services/mapService";
+import {convertPosition} from "../../services/mapService";
 
 class Map extends React.Component {
 
     componentDidMount() {
         if(this.props.zipcode.length === 5)
-            mapService.convertPosition(this.props.zipcode).then(result =>
+            convertPosition(this.props.zipcode).then(result =>
                 this.setState({
                 lat: result.places[0].latitude,
                 lng: result.places[0].longitude,
@@ -16,7 +16,7 @@ class Map extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(this.props.zipcode.length === 5 && this.props.zipcode !== prevProps.zipcode)
-            mapService.convertPosition(this.props.zipcode).then(result =>
+            convertPosition(this.props.zipcode).then(result =>
                 this.setState({
                     lat: result.places[0].latitude,
                     lng: result.places[0].longitude,

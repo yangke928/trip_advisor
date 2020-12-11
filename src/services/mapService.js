@@ -1,9 +1,9 @@
-const MAP_URL = "http://api.zippopotam.us/us"
+import {MAP_URL} from "./config"
 
-const convertPosition = (zipcode) =>
+export const convertPosition = (zipcode) =>
     fetch(`${MAP_URL}/${zipcode}`)
         .then(response => response.json())
 
 
 
-export default {convertPosition}
+

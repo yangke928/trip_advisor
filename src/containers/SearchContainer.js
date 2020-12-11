@@ -2,7 +2,7 @@ import React from "react"
 import SearchPageHeader from "../components/search/SearchPageHeader";
 import "./search-container.style.client.css"
 import restaurantService from "../services/restaurantService"
-import mapService from "../services/mapService";
+import {convertPosition} from "../services/mapService";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import Map from "../components/Map/Map";
@@ -169,22 +169,22 @@ const propertyToDispatchMapper = (dispatch) => ({
     cleanCode: (res) => dispatch({
         type: "CLEAN_RESTAURANT", res
     }),
-    findRestaurantByZipcode: (zipcode) => mapService.convertPosition(zipcode)
+    findRestaurantByZipcode: (zipcode) => convertPosition(zipcode)
         .then(response => restaurantService.findAllRestaurant(response.places[0].latitude, response.places[0].longitude))
         .then(results => dispatch({
             type: "FIND_RESTAURANT", results
         })),
-    findRestaurantByCategory: (zipcodeId, categoryId) => mapService.convertPosition(zipcodeId)
+    findRestaurantByCategory: (zipcodeId, categoryId) => convertPosition(zipcodeId)
         .then(response => restaurantService.findRestaurantsByFilter(response.places[0].latitude, response.places[0].longitude, categoryId))
         .then(results => dispatch({
             type: "FIND_RESTAURANT", results
         })),
-    findRestaurantByCategoryAndSort: (zipcode, category, sort) => mapService.convertPosition(zipcode)
+    findRestaurantByCategoryAndSort: (zipcode, category, sort) => convertPosition(zipcode)
         .then(response => restaurantService.findRestaurantBySortAndFilter(response.places[0].latitude, response.places[0].longitude, sort, category))
         .then(results => dispatch({
             type: "FIND_RESTAURANT", results
         })),
-    findRestaurantBySort: (zipcode, sort) => mapService.convertPosition(zipcode)
+    findRestaurantBySort: (zipcode, sort) => convertPosition(zipcode)
         .then(response => restaurantService.findRestaurantsBySort(response.places[0].latitude, response.places[0].longitude, sort))
         .then(results => dispatch({
             type: "FIND_RESTAURANT", results

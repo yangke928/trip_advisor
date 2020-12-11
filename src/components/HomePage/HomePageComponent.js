@@ -16,7 +16,7 @@ class HomePageComponent  extends Component {
                         </Link>
                     </div>
                     <div className="col-6">
-                        <img src={image} className="adj-img"/>
+                        <img src={image} className="adj-img" alt={""}/>
                     </div>
 
                 </div>

@@ -1,5 +1,5 @@
-const REVIEW_URL = "https://web-project-server.herokuapp.com/api/reviews"
-// const REVIEW_URL = "http://localhost:8080/api/users"
+import {REVIEW_URL} from './config'
+
 
 const findReviewsByRestaurantAndUser = (userName, resId) =>
     fetch(`${REVIEW_URL}/${resId}/${userName}`).then(response => response.json())

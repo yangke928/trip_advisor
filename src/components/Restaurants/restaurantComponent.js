@@ -8,7 +8,6 @@ import {Link} from "react-router-dom";
 class RestaurantComponent extends React.Component {
 
     componentDidMount() {
-        {console.log(this.props.user)}
         const restaurantId = this.props.match.params.restaurantId
         if (restaurantId) {
             this.props.findRestaurantById(restaurantId)
