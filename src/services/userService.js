@@ -1,5 +1,5 @@
 const USER_URL = "https://web-project-server.herokuapp.com/api/users"
-
+// const USER_URL = "http://localhost:8080/api/users"
 
 const findOneUser = (username) =>
     fetch(USER_URL).then(response => response.json())
@@ -8,18 +8,10 @@ const findOneUser = (username) =>
 const findUserByUsername = (username) =>
     fetch(`${USER_URL}/${username}`).then(response => response.json())
 
-// const findUserByUserId = (userId) =>
-//     fetch(`${USER_URL}/${userId}`).then(response => response.json())
-
-const createUser = (username, password, email) =>
+const createUser = (user) =>
     fetch(USER_URL, {
         method: "POST",
-        body: JSON.stringify({
-            username: username,
-            password: password,
-            email: email,
-            type: "USER"
-        }),
+        body: JSON.stringify(user),
         headers: {
             "content-type": "application/json"
         }

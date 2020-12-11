@@ -108,7 +108,8 @@ class RestaurantComponent extends React.Component {
                                             }
 
                                             {
-                                                this.props.isSignIn && this.props.user.type === "USER" && this.props.isSignIn === review.userName && review.editing &&
+                                                this.props.isSignIn && this.props.user.type === "USER"
+                                                && this.props.isSignIn === review.userName && review.editing &&
                                                 <span>
                                                     <textarea className="form-control"
                                                               onChange={(event) => this.props.updateReview({
@@ -122,7 +123,7 @@ class RestaurantComponent extends React.Component {
                                                      </span>
                                             }
                                             {
-                                                this.props.isSignIn && (this.props.user.type === "USER" || this.props.user.type === "ADMIN")
+                                                this.props.isSignIn && this.props.user.type === "USER"
                                                 && this.props.isSignIn === review.userName && !review.editing &&
                                                 <div className="row">
                                                     <div className="col-8">
@@ -174,7 +175,7 @@ class RestaurantComponent extends React.Component {
                             </ul>
                                 {
                                     this.props.isSignIn
-                                    && (this.props.user.type === "USER" || this.props.user.type === "ADMIN")
+                                    && (this.props.user.type === "USER")
                                     &&
                                     <button  className="btn btn-secondary btn-pos-adj"
                                              onClick={() => this.props.createReview(this.props.isSignIn, this.props.match.params.restaurantId)}>
