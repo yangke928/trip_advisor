@@ -5,8 +5,9 @@
 https://docs.google.com/document/d/1IvmY1AgG2aVOVJIc02RaV2kCBt0tHajwmPapfyAzHnM/edit?ts=5f7209fe 
 
 We've deploy both side on heroku, here is the link: https://yelp-review-project.herokuapp.com/
+(If the heroku cannot load correctly the first time you open it, please try to refresh the page, it should be work then.)
 
-If cannot run smoothly, please follow the instruction bellow:  
+If still cannot run smoothly after several tries, please follow the instruction bellow:  
 
 ## Installation
 
